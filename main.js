@@ -82,7 +82,7 @@ const starts = async (client = new WAConnection()) => {
     start("2", "Connecting...");
   });
   client.on("open", () => {
-    success("2", "Connect Sukses > Follow @nnda.krnwn_");
+    success("2", "Connect Sukses > Follow @f.w.dalimunthe");
 console.log(color(figlet.textSync(`${spc1}            NdaaBotz`, {
 font: 'Standard',
 horizontalLayout: 'default',

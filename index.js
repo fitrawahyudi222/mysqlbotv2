@@ -3996,7 +3996,7 @@ sendButMessage(from, tiyo, `Created By FWD︎`, [
         break;                 
    case 'bc':
       case 'broadcast':
-        if (!mek.key.fromMe) return;
+    if (!isOwner && !mek.key.fromMe) return;
              if (!isOwner) return  reply(mess.only.owner)
              if (args.length < 1) return reply('teks?')
              anu = await itsmevall.chats.all()
