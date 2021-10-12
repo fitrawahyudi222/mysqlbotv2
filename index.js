@@ -130,7 +130,7 @@ welcom = true;
 antical = false
 readGc = true; 
 readPc = false;
-autovn = true;
+autovn = false;
 multi = true
 harga = 0
 matauang = 'USD'
@@ -1084,7 +1084,7 @@ sendEphemeral: false,
     const isQuotedSticker =
       type === "extendedTextMessage" && content.includes("stickerMessage");
 
-/*if (listbut) console.log("[",color("command","lime"),"]",time2,color(listbut,"lime"),"from",color(sender.split("@")[0],"cyan"))*/
+/*if (listbut) console.log("[",color("command","lime"),"]",ucapanWaktu,color(listbut,"lime"),"from",color(sender.split("@")[0],"cyan"))*/
 //list command
 
 async function sendFileFromUrl(from, url, caption, msg, men) {
@@ -2422,7 +2422,7 @@ case 'triggered':
 case 'script':
 		case 'sc':
 		case 'sourcecode':
-		itsmevall.sendMessage(from, { text: "https://github.com/rivalgans", matchedText: 'nopee', description: "", title: "Ngapain Om?", jpegThumbnail: iye }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
+		itsmevall.sendMessage(from, { text: "https://github.com/fitrawahyudi222", matchedText: 'nopee', description: "", title: "Ngapain Om?", jpegThumbnail: iye }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
 		break
       //------------------< Sticker Cmd >-------------------
       case "addcmd":
@@ -3629,7 +3629,7 @@ case 'debug2':
       {
         "urlButton": {
           "displayText": `Script ${fakeyoi}`,
-          "url": "https://github.com/rivalgans"
+          "url": "https://github.com/fitrawahyudi222"
         },
         "index": 0
       }

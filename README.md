@@ -1,7 +1,7 @@
 <p align="center">
 	<img src="https://i.ibb.co/1GtbLyk/brual.jpg" width="35%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
-<h1 align="center">Mysqlbot</h1>
+<h1 align="center">Mysqlbot V2</h1>
 
 
 
