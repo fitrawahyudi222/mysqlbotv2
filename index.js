@@ -102,25 +102,23 @@ const asw1 = 'https://f.top4top.io/p_2073p4mwa0.jpg'
 const sip = fs.readFileSync('./stik/oksip.jpeg')
 const bgg = fs.readFileSync('./stik/fake.jpeg')
 //// Image ///
-const time2 = moment().tz("Asia/Jakarta").format("HH:mm:ss");
-    if (time2 < "24:59:00") {
-      var ucapanWaktu = "Selamat malam";
-    }
-    if (time2 < "19:00:00") {
-      var ucapanWaktu = "Selamat senja🌞";
-    }
-    if (time2 < "18:00:00") {
-      var ucapanWaktu = "Selamat sore🌄";
-    }
-    if (time2 < "15:00:00") {
-      var ucapanWaktu = "Selamat siang☀️";
-    }
-    if (time2 < "11:00:00") {
-      var ucapanWaktu = "Selamat pagi🌅";
-    }
-    if (time2 < "05:00:00") {
-      var ucapanWaktu = "Selamat malam🌃";
-    }
+function ucapan() {
+  const time = moment.tz('Asia/Jakarta').format('HH')
+  res = "Selamat dinihari"
+  if (time >= 4) {
+    res = "Selamat pagi 🌄"
+  }
+  if (time > 10) {
+    res = "Selamat siang ☀️"
+  }
+  if (time >= 15) {
+    res = "Selamat sore 🌅"
+  }
+  if (time >= 18) {
+    res = "Selamat malam 🌙"
+  }
+  return res
+}
  // BATAS \\
 menusimpel = false
 banChats = false;
@@ -375,7 +373,7 @@ const checkRegisteredUser = (sender) => {
     if (prefix && command) cmdadd();
     const totalhit = JSON.parse(fs.readFileSync("./lib/totalcmd.json"))[0]
       .totalcmd;
-const daftar1 = `Hai kak  ${pushname} ${ucapanWaktu} \n\nSebelum Menggunakan Bot Verify Terlebih Dahulu Ya `
+const daftar1 = `Hai kak  ${pushname} ${ucapan()} \n\nSebelum Menggunakan Bot Verify Terlebih Dahulu Ya `
        const daftar2 = '```Ketik Tombol Di Bawah Untuk Verify Kak Atau Ketik 201104\nCreated by Fwd```'
        const daftar3 = [
           {
@@ -487,7 +485,7 @@ const math = (teks) => {
     };
 const freply = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { "contactMessage": { "displayName": `${pushname}`, "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${senderr.split('@')[0]}:${senderr.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, "jpegThumbnail":fs.readFileSync('./itsmevall.jpg')
         }}}
-const freply7 = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: '1595603042@s.whatsapp.net' } : {}) }, message: { "productMessage":{"product": {"productImage": {"mimetype":'image/jpeg',"jpegThumbnail": iye, "title": `${ucapanWaktu} ${pushname}`, "productImageCount": 1 }, "businessOwnerJid": `0@s.whatsapp.net` }}}
+const freply7 = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: '1595603042@s.whatsapp.net' } : {}) }, message: { "productMessage":{"product": {"productImage": {"mimetype":'image/jpeg',"jpegThumbnail": iye, "title": `${ucapan()} ${pushname}`, "productImageCount": 1 }, "businessOwnerJid": `0@s.whatsapp.net` }}}
 }
  const fkontak = { 
                   key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `0@s.whatsapp.net` } : {}) }, message: { 'contactMessage': { 'displayName': `${pushname}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${pushname},;;;\nFN:${pushname},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': fs.readFileSync('./stik/thumb.jpeg')}}}
@@ -504,8 +502,8 @@ const ftrol = {
                             itemCount : 123,
                             status: 1,
                             surface : 1,
-                            message: `${ucapanWaktu} ${pushname}`, //Kasih namalu
-                            orderTitle: `${ucapanWaktu} ${pushname}`,
+                            message: `${ucapan()} ${pushname}`, //Kasih namalu
+                            orderTitle: `${ucapan()} ${pushname}`,
                             thumbnail: iye, //Gambarnye
                             sellerJid: '0@s.whatsapp.net' 
                           }
@@ -520,8 +518,8 @@ const ftroli2 = {
                             itemCount : 123,
                             status: 1,
                             surface : 1,
-                            message: `${ucapanWaktu} ${pushname}`, //Kasih namalu
-                            orderTitle: `${ucapanWaktu} ${pushname}`,
+                            message: `${ucapan()} ${pushname}`, //Kasih namalu
+                            orderTitle: `${ucapan()} ${pushname}`,
                             thumbnail: fake, //Gambarnye
                             sellerJid: '0@s.whatsapp.net' 
                           }
@@ -536,9 +534,9 @@ const finv = {
 	"message": {
 		"groupInviteMessage": {
 			"groupJid": "6288213840883-1616169743@g.us",
-			"inviteCode": `${ucapanWaktu} ${pushname}`,
-			"groupName": `${ucapanWaktu} ${pushname}`, 
-            "caption": `${ucapanWaktu} ${pushname}`, 
+			"inviteCode": `${ucapan()} ${pushname}`,
+			"groupName": `${ucapan()} ${pushname}`, 
+            "caption": `${ucapan()} ${pushname}`, 
             'jpegThumbnail': fake
 		}
 	}
@@ -621,10 +619,10 @@ const fvid = {
                 },
 	 message: { 
                  "videoMessage": { 
-                 "title": `${ucapanWaktu} ${pushname}`,
-                 "h": `${ucapanWaktu} ${pushname}`,
+                 "title": `${ucapan()} ${pushname}`,
+                 "h": `${ucapan()} ${pushname}`,
                  'duration': '99999', 
-                 'caption': `${ucapanWaktu} ${pushname}`,
+                 'caption': `${ucapan()} ${pushname}`,
                  'jpegThumbnail': iye
                         }
                        }
@@ -637,8 +635,8 @@ const ftex = {
                 },
 	 message: { 
 		"extendedTextMessage": {
-                 "text": `${ucapanWaktu} ${pushname}`,
-                 "title": `${ucapanWaktu} ${pushname}`,
+                 "text": `${ucapan()} ${pushname}`,
+                 "title": `${ucapan()} ${pushname}`,
                  'jpegThumbnail': iye
                         }
 	                  } 
@@ -812,11 +810,11 @@ key: {
 						"mimetype": "image/jpeg",
 						"jpegThumbnail": iye //Gambarnye
 					},
-					"title": `${ucapanWaktu} ${pushname}`, //Kasih namalu 
-					"description": `${ucapanWaktu} ${pushname}`, 
+					"title": `${ucapan()} ${pushname}`, //Kasih namalu 
+					"description": `${ucapan()} ${pushname}`, 
 					"currencyCode": "USD",
 					"priceAmount1000": "2000",
-					"retailerId": `${ucapanWaktu} ${pushname}`,
+					"retailerId": `${ucapan()} ${pushname}`,
 					"productImageCount": 1
 				},
 				    "businessOwnerJid": `0@s.whatsapp.net`
@@ -974,7 +972,7 @@ isForwarded: false,
 sendEphemeral: false,
 "externalAdReply": {
 "title": `hallo ${pushname}` ,
-"body": `${ucapanWaktu}`,
+"body": `${ucapan()}`,
 "mediaType": "2",
 "thumbnailUrl": "https://c.top4top.io/p_2087f30hj1.jpeg",
 "mediaUrl": "https://instagram.com/f.w.dalimunthe",
@@ -1341,7 +1339,7 @@ groups = itsmevall.chats.array.filter(v => v.jid.endsWith('g.us'))
               latensie = speed() - timestampe
               total = math(`${groups.length}*${privat.length}`)
 if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quoted: fkontak})
-       txtt =`Hai ${pushname}\n ${ucapanWaktu} Kak 👋`
+       txtt =`Hai ${pushname}\n ${ucapan()} Kak 👋`
 
                buttons = [{buttonId:`${prefix}vallgans`, 
                buttonText:{displayText: 'Klik Dongシ︎'},type:1},
@@ -1354,6 +1352,11 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
                buttonsMessage = {
                contentText: `${txtt}`,
                footerText: `シ︎ 𝙎𝙩𝙖𝙩𝙪𝙨 シ︎
+✩ WIB : ${jam}
+✩ WITA : ${wita}
+✩ WIT : ${wit}
+✩ HARI : ${week} ${weton}
+✩ Tanggal : ${date}
                
  𝐆𝐫𝐨𝐮𝐩 𝐂𝐡𝐚𝐭𝐬 : ${groups.length} 
  𝐏𝐫𝐢𝐯𝐚𝐭𝐞 𝐂𝐡𝐚𝐭𝐬 : ${privat.length}
@@ -1392,9 +1395,11 @@ if (!isRegistered) return sendButMessage (from, daftar1, daftar2, daftar3, { quo
        menu = `
 ☂ 𝗛𝗮𝗶 𝗞𝗮𝗸 @${sender.split("@")[0]}
 
-✩ 𝘑𝘈𝘔 : ${jam}
-✩ 𝘏𝘈𝘙𝘐 : ${week} ${weton}
-✩ 𝘛𝘢𝘯𝘨𝘨𝘢𝘭 : ${date} 
+✩ WIB : ${jam}
+✩ WITA : ${wita}
+✩ WIT : ${wit}
+✩ HARI : ${week} ${weton}
+✩ Tanggal : ${date} 
 
 シ︎ 𝐆𝐫𝐨𝐮𝐩 𝐂𝐡𝐚𝐭𝐬 : ${groups.length} 
 シ︎ 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 𝐂𝐡𝐚𝐭𝐬 : ${privat.length}

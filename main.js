@@ -194,39 +194,39 @@ console.log(`- [ Group Setting Change ] - In ${metdata.subject}`)
         client.sendMessage(anu.jid, "𝘏𝘈𝘓𝘖 𝘚𝘌𝘔𝘜𝘈 ㋛︎", "conversation");
       }
 hehe = await getBuffer(pp_user)
-if (anu.action == 'add' && !mem.includes(client.user.jid)) {
-             const mdata = await client.groupMetadata(anu.jid)
+// if (anu.action == 'add' && !mem.includes(client.user.jid)) {
+//              const mdata = await client.groupMetadata(anu.jid)
              
-             const memeg = mdata.participants.length
-             const thu = await client.getStatus(anu.participants[0], MessageType.text)
-             const num = anu.participants[0]
-             const bosco1 = await client.prepareMessage("0@s.whatsapp.net", hehe, MessageType.location,{ thumbnail: hehe})
-			 const bosco2 = bosco1.message["ephemeralMessage"] ? bosco1.message.ephemeralMessage : bosco1
-                let v = client.contacts[num] || { notify: num.replace(/@.+/, '') }
-                anu_user = v.vname || v.notify || num.split('@')[0]
-                time_welc = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-                time_wel = moment.tz('Asia/Kolkata').format("hh:mm")
-                teks = `🌹 *Hɪ* @${num.split('@')[0]}\n🌹 *Bɪᴏ* : *${thu.status}*\n🌹 *Mᴇᴍʙᴇʀs : ${memeg}*\n🌹 *Wᴇʟᴄᴏᴍᴇ Tᴏ* \n *${mdata.subject}*\n🌹 *Dᴏɴᴛ Fᴏʀɢᴇᴛ Dɪsᴄʀɪᴘᴛɪᴏɴ*\n ${time_wel} -  ${time_welc}`
-                welcomeBut = [{buttonId:`${prefix}getdeskgc`,buttonText:{displayText:'DISCRIPTION'},type:1}, {buttonId:`${prefix}script`,buttonText:{displayText:'SC'},type:1}]
-                welcomeButt = { contentText: ` `, footerText: `${teks}`, buttons: welcomeBut, headerType: 6, locationMessage: bosco2.message.locationMessage}
-                client.sendMessage(mdata.id, welcomeButt, MessageType.buttonsMessage, { caption: 'hehe', "contextInfo": { "mentionedJid" : [num], },})
-                 }
-            if (anu.action == 'remove' && !mem.includes(client.user.jid)) {
-                const mdata = await client.groupMetadata(anu.jid)
-                const num = anu.participants[0]
-                const bosco3 = await client.prepareMessage("0@s.whatsapp.net", hehe, MessageType.location,{ thumbnail: hehe})
-			    const bosco4 = bosco3.message["ephemeralMessage"] ? bosco3.message.ephemeralMessage : bosco3
-                let w = client.contacts[num] || { notify: num.replace(/@.+/, '') }
-                anu_user = w.vname || w.notify || num.split('@')[0]
-                time_welc = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-                time_wel = moment.tz('Asia/Kolkata').format("hh:mm")
-                memeg = mdata.participants.length
-                out = `*Gᴏᴏᴅ Bʏᴇ Bʀᴏᴛʜᴇʀ* 👋\n@${num.split('@')[0]}\n *Rᴇsᴛ Nᴏᴡ Pᴇᴀᴄᴇ* 🌹\n${time_wel} -  ${time_welc}`
-                goodbyeBut = [{buttonId:`${prefix}h`,buttonText:{displayText:'GET OUT 🚪'},type:1}, {buttonId:`${prefix}sc`,buttonText:{displayText:'SC'}, type:1}]
-                goodbyeButt = { contentText: ` `, footerText: `${out}`, buttons: goodbyeBut, headerType: 6, locationMessage: bosco3.message.locationMessage}
-                client.sendMessage(mdata.id, goodbyeButt, MessageType.buttonsMessage, { caption: 'hehe', "contextInfo": { "mentionedJid" : [num], },})
-            }
-      /*welcom = true
+//              const memeg = mdata.participants.length
+//              const thu = await client.getStatus(anu.participants[0], MessageType.text)
+//              const num = anu.participants[0]
+//              const bosco1 = await client.prepareMessage("0@s.whatsapp.net", hehe, MessageType.location,{ thumbnail: hehe})
+// 			 const bosco2 = bosco1.message["ephemeralMessage"] ? bosco1.message.ephemeralMessage : bosco1
+//                 let v = client.contacts[num] || { notify: num.replace(/@.+/, '') }
+//                 anu_user = v.vname || v.notify || num.split('@')[0]
+//                 time_welc = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+//                 time_wel = moment.tz('Asia/Kolkata').format("hh:mm")
+//                 teks = `🌹 *Hɪ* @${num.split('@')[0]}\n🌹 *Bɪᴏ* : *${thu.status}*\n🌹 *Mᴇᴍʙᴇʀs : ${memeg}*\n🌹 *Wᴇʟᴄᴏᴍᴇ Tᴏ* \n *${mdata.subject}*\n🌹 *Dᴏɴᴛ Fᴏʀɢᴇᴛ Dɪsᴄʀɪᴘᴛɪᴏɴ*\n ${time_wel} -  ${time_welc}`
+//                 welcomeBut = [{buttonId:`${prefix}getdeskgc`,buttonText:{displayText:'DISCRIPTION'},type:1}, {buttonId:`${prefix}script`,buttonText:{displayText:'SC'},type:1}]
+//                 welcomeButt = { contentText: ` `, footerText: `${teks}`, buttons: welcomeBut, headerType: 6, locationMessage: bosco2.message.locationMessage}
+//                 client.sendMessage(mdata.id, welcomeButt, MessageType.buttonsMessage, { caption: 'hehe', "contextInfo": { "mentionedJid" : [num], },})
+//                  }
+//             if (anu.action == 'remove' && !mem.includes(client.user.jid)) {
+//                 const mdata = await client.groupMetadata(anu.jid)
+//                 const num = anu.participants[0]
+//                 const bosco3 = await client.prepareMessage("0@s.whatsapp.net", hehe, MessageType.location,{ thumbnail: hehe})
+// 			    const bosco4 = bosco3.message["ephemeralMessage"] ? bosco3.message.ephemeralMessage : bosco3
+//                 let w = client.contacts[num] || { notify: num.replace(/@.+/, '') }
+//                 anu_user = w.vname || w.notify || num.split('@')[0]
+//                 time_welc = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+//                 time_wel = moment.tz('Asia/Kolkata').format("hh:mm")
+//                 memeg = mdata.participants.length
+//                 out = `*Gᴏᴏᴅ Bʏᴇ Bʀᴏᴛʜᴇʀ* 👋\n@${num.split('@')[0]}\n *Rᴇsᴛ Nᴏᴡ Pᴇᴀᴄᴇ* 🌹\n${time_wel} -  ${time_welc}`
+//                 goodbyeBut = [{buttonId:`${prefix}h`,buttonText:{displayText:'GET OUT 🚪'},type:1}, {buttonId:`${prefix}sc`,buttonText:{displayText:'SC'}, type:1}]
+//                 goodbyeButt = { contentText: ` `, footerText: `${out}`, buttons: goodbyeBut, headerType: 6, locationMessage: bosco3.message.locationMessage}
+//                 client.sendMessage(mdata.id, goodbyeButt, MessageType.buttonsMessage, { caption: 'hehe', "contextInfo": { "mentionedJid" : [num], },})
+//             }
+       welcom = true
       if (anu.action == "add" && !mem.includes(client.user.jid)) {
         mdata = await client.groupMetadata(anu.jid);
         memeg = mdata.participants.length;
@@ -303,7 +303,7 @@ if (anu.action == 'add' && !mem.includes(client.user.jid)) {
           {}
         );
         client.relayWAMessage(prep);
-      }*/
+      }
       
       if (anu.action == "promote") {
         const mdata = await client.groupMetadata(anu.jid);
